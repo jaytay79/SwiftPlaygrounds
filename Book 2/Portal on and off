@@ -1,0 +1,19 @@
+purplePortal.isActive = false
+var gemCount = 0
+var switchCount = 0
+while gemCount != 7
+{moveForward()
+    if  isOnGem {
+        collectGem()
+        gemCount = gemCount + 1
+    } else if isOnClosedSwitch {
+        toggleSwitch()
+        switchCount = 1
+        purplePortal.isActive = false
+    } else if isBlocked {
+        turnRight()
+        turnRight()
+    } else if gemCount == 4 && switchCount != 1 {
+        purplePortal.isActive = true  
+    }
+}
