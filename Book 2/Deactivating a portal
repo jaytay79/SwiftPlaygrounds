@@ -1,0 +1,14 @@
+greenPortal.isActive = false
+var switchCount = 0
+while switchCount != 3 {
+    if !isBlocked && !isBlockedRight {
+        turnRight()
+    } else if isOnClosedSwitch {
+        toggleSwitch()
+        switchCount = switchCount + 1
+    } else if isBlocked {
+        turnRight()
+        turnRight()
+    }
+    moveForward()
+}
