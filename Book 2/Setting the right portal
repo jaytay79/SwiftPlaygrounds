@@ -1,0 +1,23 @@
+pinkPortal.isActive = false
+var gemCount = 0
+func navigate() {
+    moveForward()
+    if isOnGem {
+        collectGem()
+        gemCount = gemCount + 1
+    } else if isBlocked {
+        turnLeft()
+        turnLeft()
+    }
+}
+while gemCount != 4 {
+    navigate()
+    if gemCount < 2 {
+        bluePortal.isActive = false
+    } else if gemCount == 2 {
+        bluePortal.isActive = true
+    } else if gemCount == 3 {
+        pinkPortal.isActive = true
+        bluePortal.isActive = false
+    }
+}
